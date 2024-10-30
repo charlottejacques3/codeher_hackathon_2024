@@ -1,0 +1,64 @@
+{% extends 'tracker\base\base.html' %}
+{% load static %}
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width"
+    initial-scale="1.0">
+    <title>CODE Her + Website</title>
+    <link rel="stylesheet" href="{% static 'tracker\styles.css' %}">
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+<body>
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">PennyWise</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navabr__item">
+                    <a href="/" class="navbar__links">Home!</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="{% url 'expenses' %}" class="navbar__links">Expenses!</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links">Budget!</a>
+                </li>
+                <li class="navabr__btn"><a href="/" 
+                class="button"> Get started!
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav> {% endcomment %}
+
+    <!--Hero Section -->
+{% block content %}
+<div class="main">
+    <div class="main__container">
+        <div class="main__content">
+            <h1>Your Finances</h1>
+            <h2>Made Easy</h2>
+            <p> Have peace of mind about your finances</p>
+            <button class="main__btn"><a href="/"> Get Started </a>
+            </button>
+        </div>
+        <div class="main__img--container">
+            <img src="{% static 'tracker/pic1.svg' %}" alt="pic" id="main__img">
+        </div>
+    </div>
+</div>
+
+    <script> src="app.js" </script>     
+    {% endblock %}
+</body>
+</html>

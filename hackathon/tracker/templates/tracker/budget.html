@@ -1,0 +1,38 @@
+{% extends 'tracker\base\base.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'tracker\expenses.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div id="content">
+        <h1>Budget</h1>
+
+        {% if categories_over|length > 0 %}
+            <span id="alert"> You are over budget in 
+            {% for category in categories_over %}
+                {{ category }},
+            {% endfor %}!
+            </span>
+        {% endif %}
+
+        <table border="1">
+            <tr>
+                <th>Category</th>
+                <th>Amount Budgeted</th>
+                <th>Amount Spent</th>
+            </tr>
+            {% for category in categories %}
+                {% comment %} {% if by_category|get_item:category.id > %} {% endcomment %}
+                <tr>
+                    <td>{{ category.name }}</td>
+                    <td>{{ category.allowed_budget }}</td>
+                    <td>{{ by_category|get_item:category.id }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <button type="button" onclick="location.href='{% url 'create_category' %}'">Add New Category</button>
+    </div>
+{% endblock %}

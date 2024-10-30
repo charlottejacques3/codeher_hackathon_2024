@@ -1,0 +1,9 @@
+{% extends 'tracker\base\base.html' %}
+
+{% block content %}
+    <h1>Add Expense</h1>
+    <form method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save" class="submit">
+    </form>
+{% endblock %}

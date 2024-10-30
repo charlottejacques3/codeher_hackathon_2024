@@ -1,0 +1,30 @@
+{% extends 'tracker/base/base.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'tracker/expenses.css' %}">
+{% endblock %}
+
+{% block content %}
+<div id="content">
+<h1>Expense Tracking</h1>
+        <table border="1">
+            <tr>
+                <th>Expense Name</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Category</th>
+            </tr>
+            {% for expense in expenses %}
+                <tr>
+                    <td>{{ expense.name }}</td>
+                    <td>{{ expense.amount }}</td>
+                    <td>{{ expense.date }}</td>
+                    <td>{{ expense.category }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <button type="button" onclick="location.href='{% url 'create_expense' %}'">Add New Expense</button>
+    </div>
+{% endblock %}

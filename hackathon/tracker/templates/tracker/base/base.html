@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODE Her + Website</title>
+    <link rel="stylesheet" href="{% static 'tracker\styles.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'tracker\home.css' %}"> {% endcomment %}
+    
+    <link rel="stylesheet" href="{% static 'tracker\expenses.css' %}">
+    {% block styles %}{% endblock %}
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+<body>
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">PennyWise</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navabr__item">
+                    <a href="/" class="navbar__links">Home!</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="{% url 'expenses' %}" class="navbar__links">Expenses!</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="{% url 'budget' %}" class="navbar__links">Budget!</a>
+                </li>
+                <li class="navabr__btn"><a href="/" 
+                class="button"> Get started!
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="content">
+    {% block content %}
+    {% endblock %}
+    </div>
+</body>
+</html>

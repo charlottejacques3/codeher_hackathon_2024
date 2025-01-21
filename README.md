@@ -9,7 +9,7 @@ To achieve this, I collaborated with group members to create a web application a
 
 My role in this project was primarily on the backend, where I implemented a database and models using Python's Django framework.
 
-![Pennywise expense tracker](/images/octocards.png)
+![Pennywise expense tracker](/pennywise.png)
 
 ## Instructions
 1. Fork this repository
